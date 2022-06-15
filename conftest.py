@@ -8,6 +8,7 @@ from fixture.application import Application
 fixture = None
 target = None
 
+
 def load_config(file):
     global target
     if target is None:
@@ -15,6 +16,7 @@ def load_config(file):
         with open(config_path) as open_file1:
             target = json.load(open_file1)
     return target
+
 
 @pytest.fixture
 def app(request):
@@ -40,4 +42,3 @@ def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
 #    parser.addoption("--baseUrl", action="store", default="http://localhost/addressbook/")
     parser.addoption("--target", action="store", default="target.json")
-

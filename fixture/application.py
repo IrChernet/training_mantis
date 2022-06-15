@@ -18,7 +18,6 @@ class Application:
         self.base_url = base_url
         self.session = SessionHelper(self, base_url)
 
-
     def is_valid(self):
         try:
             self.wd.current_url
